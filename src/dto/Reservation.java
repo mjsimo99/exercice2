@@ -1,6 +1,7 @@
 package dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class Reservation {
     private Client client;
@@ -12,8 +13,9 @@ public class Reservation {
     private int nightsNbr;
     private int roomsNbr;
     private ResType resType;
+    private List<Supplement> supplements;
 
-    public Reservation(Client client, Room room, int id, Date reservDate, Date arrivDate, Date dprtDate, int nightsNbr, int roomsNbr, ResType resType) {
+    public Reservation(Client client, Room room, int id, Date reservDate, Date arrivDate, Date dprtDate, int nightsNbr, int roomsNbr, ResType resType, List<Supplement> supplements) {
         this.client = client;
         this.room = room;
         this.id = id;
@@ -23,6 +25,7 @@ public class Reservation {
         this.nightsNbr = nightsNbr;
         this.roomsNbr = roomsNbr;
         this.resType = resType;
+        this.supplements = supplements;
     }
 
     public Client getClient() {
@@ -95,5 +98,13 @@ public class Reservation {
 
     public void setResType(ResType resType) {
         this.resType = resType;
+    }
+
+    public List<Supplement> getSupplements() {
+        return supplements;
+    }
+
+    public void setSupplements(List<Supplement> supplements) {
+        this.supplements = supplements;
     }
 }
